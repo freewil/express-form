@@ -1,5 +1,5 @@
 var mess = {
-  isDate: "%s no es una fecha",
+  isDate: "%s no es una fecha", 
   isEmail: "%s no es un email válido",
   isUrl: "%s no es una URL",
   isIP: "%s no es una dirección IP",

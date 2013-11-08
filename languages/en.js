@@ -1,6 +1,6 @@
 var mess = {
   isDate: "%s is not a date",
-  isEmail: "%s is not an email address",
+  isEmail: "%s is not an email address", 
   isUrl: "%s is not a URL",
   isIP: "%s is not an IP address",
   isAlpha: "%s contains non-letter characters",
