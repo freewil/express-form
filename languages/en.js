@@ -1,0 +1,28 @@
+var mess = {
+  isDate: "%s is not a date",
+  isEmail: "%s is not an email address",
+  isUrl: "%s is not a URL",
+  isIP: "%s is not an IP address",
+  isAlpha: "%s contains non-letter characters",
+  isAlphanumeric: "%s contains non alpha-numeric characters",
+  isNumeric: "%s is not numeric",
+  isLowercase: "%s contains uppercase letters",
+  isUppercase: "%s contains lowercase letters",
+  isInt: "%s is not an integer",
+  notEmpty: "%s has no value or is only whitespace",
+  contains: "%s does not contain required characters",
+  notContains: "%s contains invalid characters",
+  equals:"%s does not equal ",
+  isNumeric: "%s is not a number",
+  isFloat: "%s is not a decimal",
+  regex: "%s has invalid characters",
+  notRegex: "%s has invalid characters",
+  required: "%s is required",
+  minLength: "%s is too short",
+  maxLength: "%s is too long",
+  customValidator: "%s is invalid",
+  custom: "%s is invalid",
+  arrLengthShort: "%s is too short",
+  arrLengthLong: "%s is too long"
+};
+module.exports = mess;
