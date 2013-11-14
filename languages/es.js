@@ -1,0 +1,28 @@
+var mess = {
+  isDate: "%s no es una fecha", 
+  isEmail: "%s no es un email válido",
+  isUrl: "%s no es una URL",
+  isIP: "%s no es una dirección IP",
+  isAlpha: "%s contiene characteres que no son letras",
+  isAlphanumeric: "%s contiene carácteres no alpha-numericos ",
+  isNumeric: "%s no es numérico",
+  isLowercase: "%s contiene mayúsculas",
+  isUppercase: "%s contiene minúsculas",
+  isInt: "%s no es un número entero",
+  notEmpty: "%s no tiene un valor o son solo espacios en blanco",
+  contains: "%s no contiene carácteres requeridos",
+  notContains: "%s contiene carácteres invalidos",
+  equals:"%s no es igual a ",
+  isNumeric: "%s no es un número",
+  isFloat: "%s no es un decimal",
+  regex: "%s tiene carácteres invalidos",
+  notRegex: "%s tiene carácteres invalidos",
+  required: "%s es requerido",
+  minLength: "%s es muy corto",
+  maxLength: "%s es muy largo",
+  customValidator: "%s es inválido",
+  custom: "%s es inválido",
+  arrLengthShort: "%s es muy corto",
+  arrLengthLong: "%s es muy largo"
+};
+module.exports = mess;
