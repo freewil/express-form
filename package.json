@@ -25,11 +25,11 @@
     "async": "~0.2.9"
   },
   "peerDependencies": {
-    "express": "3.x"
+    "express": ">=3.x"
   },
   "devDependencies": {
     "mocha": "~1.13.0",
-    "express": "3.x",
+    "express": ">=3.x",
     "request": "~2.27.0"
   },
   "main": "index",
