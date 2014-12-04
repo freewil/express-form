@@ -12,6 +12,7 @@ http.createServer(app).listen(3000);
 
 // some duct-tape to make assert.response work with express 3.x
 app.address = function() {
+  
   return {port: 3000};
 };
 app.close = function() {
