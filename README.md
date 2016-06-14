@@ -264,6 +264,14 @@ Use "%s" in the message to have the field name or label printed in the message:
 
         Checks the field value max length.
 
+    arrLength(minLength, maxLength[, messages])
+    - minLength (integer): The min character to test for.
+    - maxLength (integer): The max character to test for.
+    - messages(array): Custom messages for min/max error
+
+        For example ["Too short string", "Too long string"]
+        If messages is not provided, default will be ["%s is too short"", "%s is too long""]
+        Checks the field value in min/max length.
 
 *Other*
 

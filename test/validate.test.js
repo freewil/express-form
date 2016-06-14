@@ -722,5 +722,48 @@ module.exports = {
       validate("field[even][more][inner]").required().equals("fail")
     )(request, {});
     assert.equal(request.form.errors.length, 2);
+  },
+
+  'validation : arrLength : failed default message': function() {
+    var request = { body: { field: "value" }};
+    form(validate("field").arrLength(10, 20))(request, {});
+    assert.equal(request.form.errors.length, 1);
+    assert.equal(request.form.errors[0], "field is too short");
+
+    request = { body: { field: "value is so long so it is failed" }};
+    form(validate("field").arrLength(4, 20))(request, {});
+    assert.equal(request.form.errors.length, 1);
+    assert.equal(request.form.errors[0], "field is too long");
+
+    request = { body: { field: "value is so long so it is failed" }};
+    form(validate("field").arrLength(10, 20, []))(request, {});
+    assert.equal(request.form.errors.length, 1);
+    assert.equal(request.form.errors[0], "field is too long");
+  },
+
+  'validation : arrLength : failed custom message': function() {
+    var request = { body: { field: "value" }};
+    form(validate("field").arrLength(10, 20, ["!!! %s SO SHORT!!!", "!!! %s SO LONG!!!"]))(request, {});
+    assert.equal(request.form.errors.length, 1);
+    assert.equal(request.form.errors[0], "!!! field SO SHORT!!!");
+
+    request = { body: { field: "value is so long so it is failed" }};
+    form(validate("field").arrLength(10, 20, ["!!! %s SO SHORT!!!", "!!! %s SO LONG!!!"]))(request, {});
+    assert.equal(request.form.errors.length, 1);
+    assert.equal(request.form.errors[0], "!!! field SO LONG!!!");
+  },
+
+  'validation : arrLength : success': function() {
+    var request = { body: { field: "value" }};
+    form(validate("field").arrLength(1, 5))(request, {});
+    assert.equal(request.form.errors.length, 0);
+
+    request = { body: { field: "value" }};
+    form(validate("field").arrLength(1, 15, ["short", "long"]))(request, {});
+    assert.equal(request.form.errors.length, 0);
+
+    request = { body: { field: "" }};
+    form(validate("field").arrLength(0, 15, ["short", "long"]))(request, {});
+    assert.equal(request.form.errors.length, 0);
   }
 };
