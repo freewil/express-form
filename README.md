@@ -381,6 +381,7 @@ Express Form adds a `form` object with various properties to the request.
       }
     }
 
+
 ### Configuration
 
 Express Form has various configuration options, but aims for sensible defaults for a typical Express application.
@@ -400,6 +401,20 @@ Express Form has various configuration options, but aims for sensible defaults f
 
     passThrough (Boolean): If true, all data sources will be merged with `req.form`. Default: false.
 
+### Languages
+
+English is the default language of this package. By the way, you can load another translation. An example :
+```js
+var form = require('express-form');
+form.locale('fr');
+```
+ Available translations for the moment : "en", "fr".
+ 
+ If you want to contribute, you can make a translation file :-)
+ - Cloning this repository
+ - Copy and rename an existing file in the "lang" directory
+ - Translate it !
+ - Pull request it !
 
 ### Credits
 
