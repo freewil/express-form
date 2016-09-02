@@ -1,5 +1,9 @@
 # express-form changelog
 
+## v0.12.7 (2016/08/31)
+* add translation support
+* add ucFirst support
+
 ## v0.12.6 (2016/06/30)
 * Guard against request body not inheriting from Object.prototype
 

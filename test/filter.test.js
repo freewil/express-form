@@ -214,6 +214,24 @@ module.exports = {
     assert.strictEqual(request.form.email, 'MYEMAIL1@EXAMPLE.COM');
   },
 
+  'filter : ucFirst': function() {
+    var request = { body: { field: "hello test !" }};
+    form(filter("field").ucFirst())(request, {});
+    assert.equal(request.form.field, "Hello test !");
+  },
+  
+  'filter : ucFirst : object': function() {
+    var request = { body: { username: { first: 'sébastien' }}};
+    form(filter("username").ucFirst())(request, {});
+    assert.strictEqual(request.form.username, '[object Object]');
+  },
+  
+  'filter : ucFirst : array': function() {
+    var request = { body: { beers: ['heineken', 'leffe'] }};
+    form(filter("beers").ucFirst())(request, {});
+    assert.strictEqual(request.form.beers, 'Heineken');
+  },
+
   'filter : toLower': function() {
     var request = { body: { field: "HELLÖ!" }};
     form(filter("field").toLower())(request, {});
