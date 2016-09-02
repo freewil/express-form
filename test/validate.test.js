@@ -397,7 +397,7 @@ module.exports = {
     var request = { body: { field: "value" }};
     form(validate("field").regex(/^\d+$/))(request, {});
     assert.equal(request.form.errors.length, 1);
-    assert.equal(request.form.errors[0], "field has invalid characters");
+    assert.equal(request.form.errors[0], "field contains invalid characters");
 
     // Failure: RegExp with custom message.
     var request = { body: { field: "value" }};
@@ -409,7 +409,7 @@ module.exports = {
     var request = { body: { field: "value" }};
     form(validate("field").regex("^\d+$"))(request, {});
     assert.equal(request.form.errors.length, 1);
-    assert.equal(request.form.errors[0], "field has invalid characters");
+    assert.equal(request.form.errors[0], "field contains invalid characters");
 
     // Success: String with modifiers
     var request = { body: { field: "value" }};
@@ -447,7 +447,7 @@ module.exports = {
     var request = { body: { field: "value" }};
     form(validate("field").notRegex(/^value$/))(request, {});
     assert.equal(request.form.errors.length, 1);
-    assert.equal(request.form.errors[0], "field has invalid characters");
+    assert.equal(request.form.errors[0], "field contains invalid characters");
 
     // Failure: RegExp with custom message.
     var request = { body: { field: "value" }};
@@ -459,7 +459,7 @@ module.exports = {
     var request = { body: { field: "value" }};
     form(validate("field").notRegex("^value$"))(request, {});
     assert.equal(request.form.errors.length, 1);
-    assert.equal(request.form.errors[0], "field has invalid characters");
+    assert.equal(request.form.errors[0], "field contains invalid characters");
 
     // Success: String with modifiers
     var request = { body: { field: "value" }};

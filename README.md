@@ -137,6 +137,8 @@ String Transformations
 
     truncate(length)            -> Chops value at (length - 3), appends `...`
 
+    ucFirst() / upperFirst()    -> Set the first letter of the field to uppercase
+
 
 ### Validator API:
 
